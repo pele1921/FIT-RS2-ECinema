@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCinema", "eCinema.csproj", "{86703D35-6B15-4498-849D-11C910B24F08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCinema.Services", "..\eCinema.Services\eCinema.Services.csproj", "{D404E94C-8FEA-468B-B678-8E2653C8952E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCinema.Services", "..\eCinema.Services\eCinema.Services.csproj", "{D404E94C-8FEA-468B-B678-8E2653C8952E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCinema.Model", "..\eCinema.Model\eCinema.Model.csproj", "{AD4784C6-1C33-4755-8A84-71994B066355}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D404E94C-8FEA-468B-B678-8E2653C8952E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D404E94C-8FEA-468B-B678-8E2653C8952E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D404E94C-8FEA-468B-B678-8E2653C8952E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD4784C6-1C33-4755-8A84-71994B066355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4784C6-1C33-4755-8A84-71994B066355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4784C6-1C33-4755-8A84-71994B066355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4784C6-1C33-4755-8A84-71994B066355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

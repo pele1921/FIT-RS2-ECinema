@@ -1,4 +1,7 @@
 using eCinema.Services;
+using eCinema.Services.Database;
+using eCinema.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IMoviesService, MoviesService>();
+builder.Services.AddTransient<IUserService, UserService>();
+
+builder.Services.AddAutoMapper(typeof(IUserService));
+
+builder.Services.AddDbContext<ECinemaContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 

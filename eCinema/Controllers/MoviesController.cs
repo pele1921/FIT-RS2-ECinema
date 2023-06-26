@@ -1,4 +1,5 @@
-﻿using eCinema.Services;
+﻿using eCinema.Model;
+using eCinema.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eCinema.Controllers
@@ -22,7 +23,7 @@ namespace eCinema.Controllers
         }
 
         [HttpGet("{id}")]
-        public Movie GetById(int id)
+        public Movie GetById(string id)
         {
             return _moviesService.GetById(id);
         }

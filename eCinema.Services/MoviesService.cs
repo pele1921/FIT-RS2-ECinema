@@ -1,46 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using eCinema.Services.Database;
 
 namespace eCinema.Services
 {
     public class MoviesService : IMoviesService
     {
-        //create a list of two movies
-        public List<Movie> Movies = new List<Movie>()
+        public ECinemaContext ECinemaContext { get; }
+        private readonly IMapper _mapper;
+
+        public MoviesService(ECinemaContext eCinemaContext, IMapper mapper)
         {
-            new Movie()
-            {
-                MovieId = 1,
-                Name = "film",
-                Genre = "drama"
-            },
-            new Movie()
-            {
-                MovieId = 2,
-                Name = "film2",
-                Genre = "drama2"
-            }
-        };
-        public IEnumerable<Movie> Get()
+            ECinemaContext = eCinemaContext;
+            _mapper = mapper;
+        }
+        public IEnumerable<Model.Movie> Get()
         {
-            return new List<Movie>()
-            {
-                new Movie()
-                {
-                    MovieId = 1,
-                    Name = "film",
-                    Genre = "drama"
-                }
-            };
+            return _mapper.Map<List<Model.Movie>>(ECinemaContext.Movies.ToList());
         }
         
 
-        public Movie GetById(int id)
+        public Model.Movie GetById(string id)
         {
-            return Movies.FirstOrDefault(x => x.MovieId == id);
+            return _mapper.Map<Model.Movie>(ECinemaContext.Movies.FirstOrDefault(m => m.Id == id));
         }
 
     }
